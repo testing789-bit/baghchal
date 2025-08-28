@@ -90,6 +90,7 @@ class _AaduPuliBoardState extends State<AaduPuliBoard> with TickerProviderStateM
       await _captureController!.forward();
 
       if (_capturedGoat != null && _capturedGoat!.position != null) {
+        // ignore: use_build_context_synchronously
         final size = context.size?.width ?? 300;
         const margin = 20.0;
         final boardWidth = size - 2 * margin;

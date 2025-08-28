@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -213,8 +215,8 @@ class GameScreen extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: _PlayerScoreColumn(
-                  isComputer: game.gameMode == GameMode.pvc && game.goatPlayer == PlayerType.computer,
-                  playerLabel: game.gameMode == GameMode.pvc && game.goatPlayer == PlayerType.computer ? 'Computer' : 'Player 2',
+                  isComputer: false, // Always human for goat
+                  playerLabel: 'Player 2',
                   pieceLabel: 'Goat',
                   imageAsset: 'assets/images/goat.png',
                   count:

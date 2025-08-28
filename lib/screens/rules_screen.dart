@@ -84,6 +84,49 @@ class RulesScreen extends StatelessWidget {
                       'Goats win by blocking all tiger moves',
                     ),
                     _buildRuleItem(context, 'Tigers win by capturing 5 goats'),
+
+                    Text(
+                      'Tiger AI Rules',
+                      style: AppTextStyles.cosmicTitle(context),
+                    ),
+                    const SizedBox(height: 18),
+                    _buildRuleItem(context, 'AI controls all 4 Tigers'),
+                    _buildRuleItem(
+                      context,
+                      'AI prioritizes capturing isolated goats',
+                    ),
+                    _buildRuleItem(
+                      context,
+                      'AI avoids getting blocked by goat formations',
+                    ),
+                    _buildRuleItem(
+                      context,
+                      'AI selects moves using difficulty-based strategy (Easy, Medium, Hard)',
+                    ),
+
+                    Text(
+                      'Goat AI Rules',
+                      style: AppTextStyles.cosmicTitle(context),
+                    ),
+                    const SizedBox(height: 18),
+                    _buildRuleItem(context, 'AI controls all 20 Goats and plays strategically in both placement and movement phases.'),
+                    _buildRuleItem(
+                      context,
+                      'During the placement phase, AI selects positions that prevent tiger jumps, focusing on blocking key paths without exposing goats to capture.',
+                    ),
+                    _buildRuleItem(
+                      context,
+                      'After all goats are placed, AI actively moves goats to trap tigers and limit their mobility.',
+                    ),
+                    _buildRuleItem(
+                      context,
+                      'AI avoids risky placements near jumpable positions early in the game and prioritizes forming blocking formations around tigers.',
+                    ),
+                    _buildRuleItem(
+                      context,
+                      'AI adapts its strategy based on difficulty: higher levels use advanced prediction, coordination, and trap setups to increase chances of victory.',
+                    ),
+
                     const SizedBox(height: 20),
                   ],
                 ),

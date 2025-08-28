@@ -59,10 +59,6 @@ class AaduPuliProvider extends ChangeNotifier {
     }
     _checkWinConditions();
     notifyListeners();
-
-    if (_currentTurn == PieceType.tiger && _gameMessage == null) {
-      _gameController?.scheduleComputerMove();
-    }
   }
 
   void _placeGoat(Point point) {
@@ -75,12 +71,6 @@ class AaduPuliProvider extends ChangeNotifier {
     _currentTurn = PieceType.tiger;
     _calculateValidMoves();
     notifyListeners();
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      if (_currentTurn == PieceType.tiger && _gameMessage == null) {
-        makeComputerMove();
-      }
-    });
   }
 
   void _handleMovement(Point point) {
@@ -143,7 +133,7 @@ class AaduPuliProvider extends ChangeNotifier {
   }
 
   void makeComputerMove() {
-    if (_gameController != null && _gameMessage == null) {
+    if (_gameController != null && _gameMessage == null && _currentTurn == PieceType.tiger) {
       _gameController!.makeComputerMove();
     }
   }
